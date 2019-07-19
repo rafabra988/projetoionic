@@ -23,4 +23,7 @@ const routes: Routes = [
   ],
   declarations: [CadClientePage]
 })
-export class CadClientePageModule {}
+export class CadClientePageModule {
+
+  
+}

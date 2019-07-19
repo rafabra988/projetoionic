@@ -1,4 +1,25 @@
-#tralha{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: coral;
+ion-label{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+ion-item p{
+    color: red;
+    margin-left: 1em;
+    margin-right: 1em;
+    border-bottom: none;
+}
+
+.batata{
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 20%;
+    display: inline-block;
+    margin-left: 7%;
+}
+
+
+form{
+    padding:2%;
 }
