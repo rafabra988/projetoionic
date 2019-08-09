@@ -1,0 +1,42 @@
+{
+  "cliente": [
+    {
+      "id": 1,
+      "Nome": "Rafael meu amigão"
+    },
+    {
+      "nome": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "senha": [
+        "",
+        null,
+        null,
+        null
+      ],
+      "email": "",
+      "endereco": "",
+      "id": 2
+    },
+    {
+      "nome": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "senha": [
+        "",
+        null,
+        null,
+        null
+      ],
+      "email": "",
+      "endereco": "",
+      "id": 3
+    }
+  ]
+}
