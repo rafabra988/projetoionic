@@ -5,22 +5,22 @@
 </ion-header>
 
 <ion-content>
-  <form [formGroup] = 'formCliente' (submit)='addCliente()'>
+  <form [formGroup] = 'formCliente' (submit)='add()'>
       <ion-item>
         <ion-label position="floating">nome:</ion-label>
-        <ion-input type="text" id="nome" placeholder="digite o nome" maxlength="50" required></ion-input>
+        <ion-input type="text" id="nome" formControlName="nome" placeholder="digite o nome" maxlength="50" required></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">endereço:</ion-label>
-        <ion-input type="text" id="endereco" placeholder="digite o endereco" maxlength="50" required></ion-input>
+        <ion-input type="text" id="endereco" formControlName="endereco" placeholder="digite o endereco" maxlength="50" required></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">email:</ion-label>
-        <ion-input type="email" id="email" placeholder="digite o email" maxlength="50" required></ion-input>
+        <ion-input type="email" id="email" formControlName="email" placeholder="digite o email" maxlength="50" required></ion-input>
       </ion-item>
       <ion-item>
         <!--<p>*</p>--><ion-label position="floating">senha:</ion-label>
-        <ion-input type="password" id="password" placeholder="digite a senha" min="8" maxlength="10" required></ion-input>
+        <ion-input type="password" id="password" formControlName="senha" placeholder="digite a senha" min="8" maxlength="10" required></ion-input>
       </ion-item>
       <ion-item>
         <ion-toggle  color="primary"></ion-toggle>

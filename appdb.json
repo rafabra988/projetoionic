@@ -1,41 +1,30 @@
 {
   "cliente": [
     {
-      "id": 1,
-      "Nome": "Rafael meu amigão"
-    },
+      "nome": "dfhdfh",
+      "senha": "asdfadf",
+      "email": "dfxb@sdg.com",
+      "endereco": "asdfa",
+      "id": 1
+    }
+  ],
+  "profissional": [
     {
-      "nome": [
-        null,
-        null,
-        null,
-        null
-      ],
-      "senha": [
-        "",
-        null,
-        null,
-        null
-      ],
-      "email": "",
-      "endereco": "",
+      "nome": "sdfgsdfg",
+      "senha": "asdfasdf",
+      "email": "sdgs@afvsadf.com",
+      "endereco": "asdf",
+      "data": "2019-08-12T10:00:10.053-03:00",
+      "servico": "sei la mais o q",
       "id": 2
     },
     {
-      "nome": [
-        null,
-        null,
-        null,
-        null
-      ],
-      "senha": [
-        "",
-        null,
-        null,
-        null
-      ],
-      "email": "",
-      "endereco": "",
+      "nome": "\\sfvzsd",
+      "senha": "sfgsdfg",
+      "email": "dfvxdf@sabf.com",
+      "endereco": "sdgsdf",
+      "data": "2019-08-12T10:07:17.394-03:00",
+      "servico": "sei la mais o q",
       "id": 3
     }
   ]

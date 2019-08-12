@@ -14,45 +14,64 @@ import { Router } from '@angular/router';
 export class CadClientePage implements OnInit {
   
   formCliente:FormGroup;
+  
+  constructor(public loadingController: LoadingController, public alertController: AlertController,
+    private formbuilder:FormBuilder, //metodo de validacao
+    private clienteservice:ClienteService, ////metodo criado pra manipular os dados da base (o service q vc criou [intermedio entre banco e app])
+    private router:Router //rota pra outra pagina, para resposta do usuario
+      ) {}
 
-  ngOnInit(): void {
+      ngOnInit(): void {
     //separar campos q foram agrupado no formgroup no html, para trata-los individualmente
     this.formCliente = this.formbuilder.group({
 
-      nome: [
+      nome:[
         //parametros resposaveis pela validacao do conteudo do campo
-        [
-          Validators.required,//campo obrigatorio
-          Validators.minLength(2),//quantidade minima de caracteres
-          Validators.maxLength(100),//quantidade maxima de caracteres
-          Validators.pattern(/^[a-zA-Z]+$/),//regex (caracteres disponiveis)
-        ]
-      ],
+          '',[
+
+            Validators.required,//campo obrigatorio
+            Validators.min(2),//quantidade minima de caracteres
+            Validators.max(100),//quantidade maxima de caracteres
+            Validators.pattern(/^[a-zA-Z]+$/),//regex (caracteres disponiveis)
+          ]
+        ],
       senha:[
-        ['',
-          Validators.required,
-          Validators.minLength(5),
-          Validators.maxLength(5)
+          '',[
+
+            Validators.required,
+            Validators.min(5),
+            Validators.max(5)
+          ]
         ]
-      ],
-      email:['',
-        [
-          Validators.required,
-          Validators.maxLength(100),
-          Validators.email
+      ,
+      email:[ 
+          '',[
+
+            Validators.required,
+            Validators.max(100),
+            Validators.email
+          ]
         ]
-      ],
-      endereco:['',
-        [
-          Validators.required,
-          Validators.maxLength(100)
+      ,
+      endereco:[
+          '',[
+
+            Validators.required,
+            Validators.max(100)
+          ]
         ]
-      ]
+          
     })
 
   }
 
-  addCliente(){
+  test(){
+    const novoCliente = this.formCliente.getRawValue() as cliente;
+    
+    console.log(novoCliente);
+  }
+
+  add(){
     //enviar para o servidor
     //resgatando os valores do campo e fazendo um cast(consersão) para o modelo(template) cliente
     const novoCliente = this.formCliente.getRawValue() as cliente;
@@ -67,11 +86,6 @@ export class CadClientePage implements OnInit {
     )
   }
 
-  constructor(public loadingController: LoadingController, public alertController: AlertController,
-    private formbuilder:FormBuilder, //metodo de validacao
-    private clienteservice:ClienteService, ////metodo criado pra manipular os dados da base (o service q vc criou [intermedio entre banco e app])
-    private router:Router //rota pra outra pagina, para resposta do usuario
-      ) {}
 
   async presentLoading() {
     const loading = await this.loadingController.create({
@@ -83,7 +97,7 @@ export class CadClientePage implements OnInit {
     const { role, data } = await loading.onDidDismiss();
     
 
-    console.log('Loading dismissed!');
+    console.log('botão foi apertado!');
   }
 
 

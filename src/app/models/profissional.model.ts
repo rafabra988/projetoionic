@@ -1,7 +1,8 @@
 export interface profissional{
-    email:string;
     nome:string;
+    email:string;
     endereco:string;
     senha:string;
-    tipoServico:string;
+    data:Date;
+    servico:string;
 }

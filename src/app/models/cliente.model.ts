@@ -1,6 +1,6 @@
 export interface cliente{
     nome:string;
     endereco:string;
-    emailCliente:string;
+    email:string;
     senha:string;
 }

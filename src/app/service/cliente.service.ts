@@ -18,6 +18,9 @@ const httpOptions = {
 // configurar manipulação de dados recebidos do formilario
 export class ClienteService {
 
+  addProf(arg0: any): any {
+    throw new Error("Method not implemented.");
+  }
   constructor(private http:HttpClient) { }
 
 //crud
