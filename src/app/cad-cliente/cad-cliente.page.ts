@@ -14,14 +14,29 @@ import { Router } from '@angular/router';
 export class CadClientePage implements OnInit {
   
   formCliente:FormGroup;
+
+  private cliente:cliente[];
   
   constructor(public loadingController: LoadingController, public alertController: AlertController,
     private formbuilder:FormBuilder, //metodo de validacao
     private clienteservice:ClienteService, ////metodo criado pra manipular os dados da base (o service q vc criou [intermedio entre banco e app])
     private router:Router //rota pra outra pagina, para resposta do usuario
-      ) {}
+      ) {
+        this.isToggled = false;
+      }
+
+      public isToggled: boolean;
+
+      public notify() {
+        if(this.isToggled){
+          alert("deu ruim")
+        }else{
+          alert("fdhghj")
+        }
+      }
 
       ngOnInit(): void {
+
     //separar campos q foram agrupado no formgroup no html, para trata-los individualmente
     this.formCliente = this.formbuilder.group({
 
@@ -63,6 +78,9 @@ export class CadClientePage implements OnInit {
           
     })
 
+
+    this.listaCliente()
+
   }
 
   test(){
@@ -77,7 +95,6 @@ export class CadClientePage implements OnInit {
     const novoCliente = this.formCliente.getRawValue() as cliente;
 
     this.clienteservice.addCliente(novoCliente).subscribe(
-      () => this.router.navigateByUrl(''),//faz um direcionamento
       
       error =>{
         console.log(error)
@@ -96,6 +113,7 @@ export class CadClientePage implements OnInit {
 
     const { role, data } = await loading.onDidDismiss();
     
+    window.location.reload();
 
     console.log('botão foi apertado!');
   }
@@ -111,7 +129,12 @@ export class CadClientePage implements OnInit {
   
       await alert.present();
     }
-
-  
+ 
+   listaCliente(){
+     this.clienteservice.pesquisarCliente().subscribe(
+       clienteDB => this.cliente = clienteDB,
+       erroDB => console.log(erroDB)
+     )
+  }
 
 }

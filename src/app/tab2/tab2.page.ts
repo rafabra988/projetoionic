@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { cliente } from '../models/cliente.model';
+import { ClienteService } from '../service/cliente.service';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab2',
@@ -17,6 +20,4 @@ export class Tab2Page {
       {"nome" : "MICROSOFT TB", "pq": "pq sim"}
     ]
    }
-
-
 }

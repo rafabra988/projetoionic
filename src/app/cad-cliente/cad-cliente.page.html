@@ -23,13 +23,33 @@
         <ion-input type="password" id="password" formControlName="senha" placeholder="digite a senha" min="8" maxlength="10" required></ion-input>
       </ion-item>
       <ion-item>
-        <ion-toggle  color="primary"></ion-toggle>
+          <ion-toggle [(ngModel)]="isToggled" [ngModelOptions]="{standalone: true}" (ionChange)="notify()" color="primary"></ion-toggle>
       </ion-item>
-
+      
       <ion-button type="submit" class="batata" color="primary" expand="block" (click)="presentLoading()">Cadastrar</ion-button>
       <ion-button type="submit" class="batata" color="primary" expand="block" (click)="presentAlert()">Cancelar</ion-button>
-    
+      
     </form>
          
+    <div class="container">
+        <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"> </th>
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>
+            <th scope="col">Endereço</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of cliente">
+            <td align="center">{{ c.id }}</td>
+            <td align="center">{{ c.nome }}</td>
+            <td align="center">{{ c.email }}</td>
+            <td align="center">{{ c.endereco }}</td>
+          </tr>
+        </tbody>
+        </table>
+      </div>
     
 </ion-content>

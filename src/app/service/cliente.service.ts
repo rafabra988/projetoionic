@@ -18,9 +18,6 @@ const httpOptions = {
 // configurar manipulação de dados recebidos do formilario
 export class ClienteService {
 
-  addProf(arg0: any): any {
-    throw new Error("Method not implemented.");
-  }
   constructor(private http:HttpClient) { }
 
 //crud
@@ -32,7 +29,7 @@ export class ClienteService {
   
   //pesquisar o cliente pelo email
   getCliente(email:string){
-    return this.http.get<cliente>(`${API_URL}/cliente?emailCliente=${email}`, httpOptions);
+    return this.http.get<cliente>(`${API_URL}/cliente?email=${email}`, httpOptions);
   }
   
   //pesquisar/listar todos os clientes
